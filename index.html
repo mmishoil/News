@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Newsify — Stay Informed with the Latest Global Events 24/7 | Powerful Search and Filters
+    </title>
+    <meta
+      name="description"
+      content="Newsify is a powerful news search engine that allows you to find the latest news from around the world. Stay informed with the latest global events 24/7." />
+    <meta
+      name="keywords"
+      content="news, search, engine, latest, global, events, 24/7, stay, informed, real-time updates, news search platform" />
+    <!-- Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+
+    <!-- Preload Google Fonts -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&family=Merriweather:wght@400;500;700&display=swap"
+      as="style" />
+
+    <!-- Normal Link to Google Fonts (non-blocking) -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&family=Merriweather:wght@400;500;700&display=swap"
+      media="print"
+      onload="this.media='all'" />
+
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&family=Merriweather:wght@400;500;700&display=swap" />
+    </noscript>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <main class="main">
+      <header class="header">
+        <a href="/" class="logo" data-link>
+          <img src="/images/earth.svg" alt="logotype" class="logo__icon">
+          <span class="logo__body">
+            <span class="logo__title">Newsify</span>
+            <span class="logo__subtitle">stay informed</span>
+          </span>
+        </a>
+        <nav class="nav header__nav">
+          <ul class="nav__menu">
+            <li class="nav__item"><a class="nav__link" href="/index.html" data-link>Home</a></li>
+            <li class="nav__item"><a class="nav__link" href="/about.html" data-link>About</a></li>
+          </ul>
+        </nav>
+        <div class="theme-switch">
+          <input class="theme-switch__input" type="checkbox" id="themeToggle" />
+          <label for="themeToggle" class="theme-switch__label">
+            <img src="/images/sun.svg" alt="theme light" class="theme-switch__icon theme-switch__icon_sun">
+            <img src="/images/moon.svg" alt="theme dark" class="theme-switch__icon theme-switch__icon_moon">
+          </label>
+        </div>
+      </header>
+      <section class="page">
+        <div class="container">
+          <h1 class="page__title">Search, <span class="text-primary">Find</span> & Read</h1>
+          <h2 class="page__subtitle">
+            Easily search for the latest news by date and keywords. Stay informed with personalized
+            updates, sorted by popularity, and never miss the stories that matter most.
+          </h2>
+          <div class="search">
+            <form
+              action=""
+              name="searchForm"
+              id="search-form"
+              aria-label="Search news"
+              role="search">
+              <div class="search__form form">
+                <div class="form__row">
+                  <label for="search-input" class="visually-hidden">Title or keyword</label>
+                  <img src="/images/pencil.svg" alt="edit" class="form__addon form__addon_left">
+                  <input
+                    class="search__input input input_addon"
+                    type="search"
+                    name="q"
+                    id="search-input"
+                    placeholder="Title or keyword"
+                    aria-label="Search"
+                    autocomplete="off" />
+                </div>
+                <div class="form__row">
+                  <label for="datepicker" class="visually-hidden">Date</label>
+                  <input
+                    class="search__input input input_addon"
+                    type="date"
+                    name="date"
+                    id="datepicker"
+                    placeholder="Date" />
+                </div>
+                <button class="button button_sm button_primary" type="submit">Search</button>
+              </div>
+              <span class="search__form-error" id="search-form-error"></span>
+              <span class="search__form-info" id="search-form-info"></span>
+              <div class="search__footer">
+                <label for="all">
+                  <input
+                    class="custom-radio"
+                    type="radio"
+                    name="sortBy"
+                    id="all"
+                    value="publishedAt"
+                    checked />
+                  <span class="label">All</span>
+                </label>
+                <label for="popular">
+                  <input
+                    class="custom-radio"
+                    type="radio"
+                    name="sortBy"
+                    id="popular"
+                    value="popularity" />
+                  <span class="label">Popular</span>
+                </label>
+                <label for="relevancy">
+                  <input
+                    class="custom-radio"
+                    type="radio"
+                    name="sortBy"
+                    id="relevancy"
+                    value="relevancy" />
+                  <span class="label">Relevancy</span>
+                </label>
+                <label for="newest">
+                  <input
+                    class="custom-radio"
+                    type="radio"
+                    name="sortBy"
+                    id="newest"
+                    value="publishedAt" />
+                  <span class="label">Newest</span>
+                </label>
+              </div>
+            </form>
+          </div>
+          <div class="section section_latest">
+            <h3 class="section__title">Latest News</h3>
+            <div class="gallery gallery_latest">
+              <div class="card">
+                <div class="card__image">
+                  <img class="image" src="/images/img1.jpg" alt="" />
+                </div>
+                <div class="card__body">
+                  <span class="card__date">
+                    <img src="/images/calendar.svg" alt="calendar" class="icon">
+                    24 Oct, 2024
+                  </span>
+                  <h4 class="card__title">Hymn to the United Nations</h4>
+                  <p class="card__description">
+                    Get inspired by this revived W.H. Auden’s Hymn to the United Nations. "Let music
+                    for peace Be the paradigm, For peace means to change At the right time...
+                  </p>
+                  <div class="card__footer">
+                    <button class="card__link button button_link">
+                      <span>Read more</span>
+                      <img src="/images/arrow.svg" alt="arrow" class="icon">
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card__image">
+                  <img class="image" src="/images/img1.jpg" alt="" />
+                </div>
+                <div class="card__body">
+                  <span class="card__date">
+                    <img src="/images/calendar.svg" alt="calendar" class="icon">
+                    24 Oct, 2024
+                  </span>
+                  <h4 class="card__title">Hymn to the United Nations</h4>
+                  <p class="card__description">
+                    Get inspired by this revived W.H. Auden’s Hymn to the United Nations. "Let music
+                    for peace Be the paradigm, For peace means to change At the right time...
+                  </p>
+                  <div class="card__footer">
+                    <button class="card__link button button_link">
+                      <span>Read more</span>
+                      <img src="/images/arrow.svg" alt="arrow" class="icon">
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card__image">
+                  <img class="image" src="/images/img1.jpg" alt="" />
+                </div>
+                <div class="card__body">
+                  <span class="card__date">
+                    <img src="/images/calendar.svg" alt="calendar" class="icon">
+                    24 Oct, 2024
+                  </span>
+                  <h4 class="card__title">Hymn to the United Nations</h4>
+                  <p class="card__description">
+                    Get inspired by this revived W.H. Auden’s Hymn to the United Nations. "Let music
+                    for peace Be the paradigm, For peace means to change At the right time...
+                  </p>
+                  <div class="card__footer">
+                    <button class="card__link button button_link">
+                      <span>Read more</span>
+                      <img src="/images/arrow.svg" alt="arrow" class="icon">
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card__image">
+                  <img class="image" src="/images/img1.jpg" alt="" />
+                </div>
+                <div class="card__body">
+                  <span class="card__date">
+                    <img src="/images/calendar.svg" alt="calendar" class="icon">
+                    24 Oct, 2024
+                  </span>
+                  <h4 class="card__title">Hymn to the United Nations</h4>
+                  <p class="card__description">
+                    Get inspired by this revived W.H. Auden’s Hymn to the United Nations. "Let music
+                    for peace Be the paradigm, For peace means to change At the right time...
+                  </p>
+                  <div class="card__footer">
+                    <button class="card__link button button_link">
+                      <span>Read more</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <p class="footer__copyright">
+          Made with ❤️ by
+          <a
+            class="footer__link"
+            rel="noopener noreferrer"
+            href="https://github.com/mmishoil/Newsify"
+            target="_blank"
+            >
+            <img src="/images/github.svg" alt="github">
+            Misha Zhyzhka</a>
+        </p>
+      </footer>
+    </main>
+    <script type="module" src="/js/index.js"></script>
+  </body>
+</html>
