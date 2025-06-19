@@ -2,13 +2,10 @@ import themeToggle from './theme.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('search-form')
-  const radioButtons = form?.querySelectorAll('input[type="radio"]')
-  const submitButton = form.querySelector('[type="submit"]')
-  const errorTextElement = form.querySelector('#search-form-error')
-  const infoTextElement = form.querySelector('#search-form-info')
 
+  themeToggle('#themeToggle')
 
-
+  if (!form) return;
   const handleSearchForm = () => {
     const formData = new FormData(form)
     const params = Object.fromEntries(formData.entries())
@@ -34,26 +31,23 @@ document.addEventListener('DOMContentLoaded', () => {
     submitButton.disabled = false
   }
 
-  themeToggle('#themeToggle')
+  const radioButtons = form?.querySelectorAll('input[type="radio"]')
+  const submitButton = form.querySelector('[type="submit"]')
+  const errorTextElement = form.querySelector('#search-form-error')
+  const infoTextElement = form.querySelector('#search-form-info')
 
-  if (form) {
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    handleSearchForm(1);
+  })
 
-    form.addEventListener('submit', async event => {
-      event.preventDefault();
-      handleSearchForm(1);
+  if (radioButtons.length === 0) return
+
+  radioButtons.forEach(radio => {
+    radio.addEventListener('change', async () => {
+      if (radio.checked) {
+        handleSearchForm(1);
+      }
     })
-  
-    if (radioButtons.length === 0) return
-  
-    radioButtons.forEach(radio => {
-      radio.addEventListener('change', async () => {
-        if (radio.checked) {
-          handleSearchForm(1);
-        }
-      })
-    })
-  }
-
-
- 
+  })
 })
